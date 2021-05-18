@@ -1,0 +1,51 @@
+.body{
+width: 418px;
+background: rgba(255, 255, 255, 0.25);
+backdrop-filter: blur(20px);
+border-radius: 30px;
+}
+
+.imgx{
+width: 418px;
+height: 313px;
+left: 538px;
+top: 289px;
+}
+
+.inputFigma{
+  width: 418px;
+height: 7px;
+left: 538px;
+top: 758px;
+background: rgba(255, 255, 255, 0.5);
+backdrop-filter: blur(20px);
+border-radius: 10px
+}
+
+.buttonFigma{
+  width: 50px;
+  height: 36px;
+  left: 900px;
+  top: 80px;
+  background: linear-gradient(177.79deg, rgba(78, 143, 227, 0.9) 1.86%, rgba(10, 82, 236, 0.9) 179.72%);
+  border-radius: 10px;
+  }
+
+.buttonFigma2{
+width: 185px;
+height: 36px;
+left: 771px;
+top: 803px;
+background: linear-gradient(177.79deg, rgba(78, 143, 227, 0.9) 1.86%, rgba(10, 82, 236, 0.9) 179.72%);
+border-radius: 10px;
+}
+
+.selectFigma{
+width: 418px;
+height: 36px;
+left: 538px;
+top: 692px;
+background: rgba(255, 255, 255, 0.44);
+backdrop-filter: blur(20px);
+border-radius: 10px;
+}

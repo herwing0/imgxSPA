@@ -1,0 +1,11 @@
+.back-ground-color{
+ width: 881px;
+ height: 795px;
+ left: 279px;
+ top: 114px;
+ width: 700px;
+ background: rgba(150, 248, 252, 0.25);
+ backdrop-filter: blur(20px);
+ border-radius: 30px;
+
+}

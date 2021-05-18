@@ -1,0 +1,57 @@
+<div class=" body card mb-3" style="max-width: 700px;" [formGroup]="imgServ">
+  <div class="g-0">
+    <div class="col-md-12" >
+     <img class="imgx" ixImg for="url" *ngIf="verImg && !newImgUrl || refreshed" [src]="verImg" [width]="600"[height]="450"sizes="100vw">
+      <img ixImg class="imgx"  for="url" *ngIf="!verImg" src="assets\default.jpg"  [width]="600"[height]="450"sizes="100vw">
+      <img class="imgx" ixImg for="url" *ngIf="newImgUrl && !refreshed  " [src]="newImgUrl" [width]="600"[height]="450"sizes="100vw">
+    </div>
+
+      <div>
+      <select class="selectFigma " *ngIf="verImg"  [(ngModel)]="optionSelected" formControlName="option">
+          <option [disabled]="true" [value]="'Select an option'" class="form-control font-italic" style="width: 100% !important;">Select an option</option>
+          <option [value]="'Brightness'">Brightness</option>
+          <option [value]="'Exposure'">Exposure</option>
+          <option [value]="'Rotation'">Rotation</option>
+          <option [value]="'Gamma'">Gamma</option>
+
+      </select>
+      <select class="selectFigma"  (change)="shoot()" [(ngModel)]="imgSelected" formControlName="url">
+        <option [disabled]="true" value="0">Select an option</option>
+        <option   [value]="img.url"  *ngFor="let img of images">
+          {{img.name}}
+        </option>
+    </select>
+
+      <input class="inputFigma" (click)="brigthnessValue()" formControlName="brigthness" *ngIf="verImg && optionSelected === 'Brightness'"  type="number" type="range" [placeholder]="optionSelected" id="Brightness" for="Brightness ">
+      <input  class="inputFigma" (click)="exposureValue()" formControlName="exposure" *ngIf="verImg && optionSelected === 'Exposure'"  type="number" type="range" [placeholder]="optionSelected"  id="Exposure" for="Exposure ">
+      <input  class="inputFigma" (click)="rotationValue()" formControlName="rotation" *ngIf="verImg && optionSelected === 'Rotation'"  type="number" type="range" [placeholder]="optionSelected"  id="Rotation" for="Rotation ">
+      <input  class="inputFigma" (click)="gammaValue()" formControlName="gamma" *ngIf="verImg && optionSelected === 'Gamma'"  type="number" type="range" [placeholder]="optionSelected"  id="Gamma" for="Gamma ">
+
+<div style="margin: 0 auto;  text-align: center;" >
+      <button  class="buttonFigma2"  *ngIf="verImg && optionSelected === 'Brightness'" (click)="goToUrlBrigthness(verImg) && optionSelected === 'Brightness'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+      </svg></button>
+      <button  class="buttonFigma2"  *ngIf="verImg && optionSelected === 'Exposure'" (click)="goToUrlexposure(verImg) && optionSelected === 'Exposure'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+      </svg></button>
+      <button  class="buttonFigma2"  *ngIf="verImg && optionSelected === 'Rotation'" (click)="goToUrlRotation(verImg) && optionSelected === 'Exposure'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+      </svg></button>
+      <button  class="buttonFigma2"  *ngIf="verImg && optionSelected === 'Gamma'" (click)="goToUrlGamma(verImg) && optionSelected === 'Gamma'"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+      </svg></button>
+      <button *ngIf="verImg  && optionSelected !== 'Select an option'" class="buttonFigma m-1" (click)="refresh()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+      </svg></button>
+
+      </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
