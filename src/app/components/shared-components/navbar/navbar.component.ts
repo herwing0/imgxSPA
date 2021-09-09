@@ -16,6 +16,4 @@ export class NavbarComponent implements OnInit {
     const url = "https://www.linkedin.com/in/penarandajn/";
     window.open(url, "_blank");
   }
-
-
 }

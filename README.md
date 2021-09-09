@@ -5,7 +5,9 @@ It could be improved.
 Open on git :
 
 git clone https://github.com/herwing0/imgxSPA.git
+
 ng serve
+
 navigate to `http://localhost:4200/` 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
