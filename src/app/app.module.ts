@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared-components/navbar/navbar.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ImgixappComponent } from './components/imgixapp/imgixapp.component';
-import { AboutComponent } from './components/about/about.component';
 import { ImgixAngularModule } from '@imgix/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -25,7 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     HomepageComponent,
     ImgixappComponent,
-    AboutComponent,
   ],
   imports: [
     APP_ROUTING,

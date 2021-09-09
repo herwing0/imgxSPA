@@ -12,4 +12,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goLinkedin() {
+    const url = "https://www.linkedin.com/in/penarandajn/";
+    window.open(url, "_blank");
+  }
+
+
 }
