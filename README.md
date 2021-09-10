@@ -1,5 +1,5 @@
 # ImgAPP
-An little practice excerise that i made, plays with some adjustments on an image, generating an url in real time .
+A little practice excerise that i made, plays with some adjustments on an image, generating an url in real time .
 It could be improved.
 
 Open on git :
